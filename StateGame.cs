@@ -15,30 +15,30 @@
 
 		public bool IsUp()
 		{
-			if (_y == 0)
-				return true;
-			return false;
+			if (_x == 0)
+				return false;
+			return true;
 		}
-
+        
 		public bool IsDown()
 		{
-			if (_y == (size - 1))
-				return true;
-			return false;
+			if (_x == (size - 1))
+				return false;
+			return true;
 		}
 
 		public bool IsLeft()
 		{
-			if (_x == 0)
-				return true;
-			return false;
+			if (_y == 0)
+				return false;
+			return true;
 		}
 
 		public bool isRight()
 		{
-			if (_x == (size - 1))
-				return true;
-			return false;
+			if (_y == (size - 1))
+				return false;
+			return true;
 		}
 
 		public void InitState()
@@ -61,10 +61,20 @@
 			State[_x, _y] = 0;
 		}
 
-		public int[,] GetState()
+	    public void Swap(int offsetY, int offsetX)
+	    {
+	        int tmp = State[_x, _y];
+	        State[_x, _y] = State[_x + offsetX, _y + offsetY];
+	        State[_x + offsetX, _y + offsetY] = tmp;
+
+	        _x = _x + offsetX;
+	        _y = _y + offsetY;
+	    }
+
+
+        public int[,] GetState()
 		{
 			return State;
 		}
 	}
 }
-//http://kinogo-2016.net/4457-12.html

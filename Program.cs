@@ -8,8 +8,19 @@ namespace _15
         {
         	Game game = new Game();
 			StateGame state = game.GetStateGame();
-			DisplayGame show = new DisplayGame();
-			show.Display(state);
+
+            //первый показ поля игры
+            DisplayGame show = new DisplayGame();
+            using (show)
+            {
+                show.Display(state);
+            }
+			
+            GameControl
+                .GetInstance()
+                .loopKeyPress(game);
+
+
         }
     }
 }

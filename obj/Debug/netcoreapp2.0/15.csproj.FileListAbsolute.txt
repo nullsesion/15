@@ -1,0 +1,9 @@
+D:\Projects\15\bin\Debug\netcoreapp2.0\15.deps.json
+D:\Projects\15\bin\Debug\netcoreapp2.0\15.runtimeconfig.json
+D:\Projects\15\bin\Debug\netcoreapp2.0\15.runtimeconfig.dev.json
+D:\Projects\15\bin\Debug\netcoreapp2.0\15.dll
+D:\Projects\15\bin\Debug\netcoreapp2.0\15.pdb
+D:\Projects\15\obj\Debug\netcoreapp2.0\15.csprojResolveAssemblyReference.cache
+D:\Projects\15\obj\Debug\netcoreapp2.0\15.AssemblyInfo.cs
+D:\Projects\15\obj\Debug\netcoreapp2.0\15.dll
+D:\Projects\15\obj\Debug\netcoreapp2.0\15.pdb

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace _15
 {
-	class DisplayGame
+	class DisplayGame : IDisposable
 	{
 		public void Display(StateGame state)
 		{
@@ -12,10 +12,37 @@ namespace _15
 				for (int j = 0; j < s.GetLength(1); j++)
 					ShowCell(s[i, j], j, i);
 			
-			Console.ReadKey();
+			//Console.ReadKey();
 		}
 
-		private void ShowCell(int cellValue, int x, int y)
+	    public Command GetCommand()
+	    {
+	        ConsoleKeyInfo cki = Console.ReadKey();
+
+	        if (cki.Key == ConsoleKey.Escape)
+	            return Command.Escape;
+
+	        if (cki.Key == ConsoleKey.UpArrow)
+	            return Command.Up;
+
+	        if (cki.Key == ConsoleKey.RightArrow)
+	            return Command.Right;
+
+	        if (cki.Key == ConsoleKey.DownArrow)
+	            return Command.Down;
+
+	        if (cki.Key == ConsoleKey.LeftArrow)
+	            return Command.Left;
+
+            return Command.Empty;
+        }
+
+	    public static void ErrorMessage()
+	    {
+	        Console.Beep();
+	    }
+
+	    private void ShowCell(int cellValue, int x, int y)
 		{
 			const int sizeX = 5;
 			const int sizeY = 5;
@@ -53,5 +80,9 @@ namespace _15
 				xPos++;
 			}
 		}
-	}
+
+	    public void Dispose()
+	    {
+	    }
+    }
 }
